@@ -1,0 +1,80 @@
+\documentclass{jarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{caption}
+% \captionsetup[table]{justification=centering}
+
+\title{電気回路}
+\author{2511198 肥田幸久}
+\date{2025年11月11日作成}
+
+\begin{document}
+\maketitle
+
+
+
+\section{実験の目的}
+
+本実験では, 電気回路の中で起こる力学的な現象を観測し, 減衰振動の周波数やピーク電圧と時間の関係といった量を求めることを目的とする.
+
+
+
+\section{実験の原理}
+
+抵抗値が$R$の抵抗器の両端にかかる電圧を$V_R(t)$, 流れる電流を$I(t)$とすると, オームの法則により次式が成り立つ.
+\begin{equation}
+V_R(t) = R I(t)
+\end{equation}
+コンデンサは充電時間を除けば絶縁体である.
+コンデンサの静電容量を$C$とすると, ある時間にコンデンサに蓄えられている電荷$q(t)$とコンデンサの両端にかかる電圧$V_C(t)$の関係は次式で表される.
+\begin{equation}
+  q(t) = C V_C(t)
+\end{equation}
+電流とは単位時間あたりに流れる電荷の量であるため, 次式が成り立つ.
+\begin{equation}
+  I(t) = \frac{d q(t)}{d t}
+\end{equation}
+コイルは時間変化する電流に対して誘導起電力を発生させる.
+コイルの自己インダクタンスを$L$, ある時間にコイルを流れる電流を$I(t)$とすると, 誘導起電力$V_L(t)$は次式で表される.
+\begin{equation}
+  V_L(t) = -L \frac{d I(t)}{d t}
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{picture_principle.png}
+  \caption{RLC直列回路の模式図}
+  \label{fig:RLC_series_circuit}
+\end{figure}
+
+
+\section{実験方法}
+
+
+
+
+
+\section{実験結果}
+
+
+
+
+
+\section{考察}
+
+
+
+
+
+\section{まとめ}
+
+
+
+\begin{thebibliography}{99}
+
+
+\end{thebibliography}
+
+\end{document}
