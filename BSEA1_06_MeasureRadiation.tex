@@ -1,0 +1,129 @@
+\documentclass{jarticle}
+
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{amsmath}
+% \captionsetup[table]{justification=centering}
+
+\title{電気回路}
+\author{2511198 肥田幸久}
+\date{2025年11月11日作成}
+
+\begin{document}
+\maketitle
+
+
+
+\section{実験の目的}
+
+本実験では, 電気回路の中で起こる力学的な現象を観測し, 減衰振動の周波数やピーク電圧と時間の関係といった量を求めることを目的とする.
+
+
+
+\section{実験の原理}
+
+抵抗値が$R$の抵抗器の両端にかかる電圧を$V_R(t)$, 流れる電流を$I(t)$とすると, オームの法則により次式が成り立つ.
+\begin{equation}
+V_R(t) = RI(t)
+\end{equation}
+コンデンサは充電時間を除けば絶縁体である.
+コンデンサの静電容量を$C$とすると, ある時間にコンデンサに蓄えられている電荷$q(t)$とコンデンサの両端にかかる電圧$V_C(t)$の関係は次式で表される.
+\begin{equation}
+  q(t) = CV_C(t)
+\end{equation}
+電流とは単位時間あたりに流れる電荷の量であるため, 次式が成り立つ.
+\begin{equation}
+  I(t) = \frac{dq(t)}{dt}
+  \label{eq:current_charge}
+\end{equation}
+コイルは時間変化する電流に対して誘導起電力を発生させる.
+コイルの自己インダクタンスを$L$, ある時間にコイルを流れる電流を$I(t)$とすると, 誘導起電力$V_L(t)$は次式で表される.
+\begin{equation}
+  V_L(t) = -L \frac{dI(t)}{dt}
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{picture_principle.png}
+  \caption{RLC直列回路の模式図}
+  \label{fig:RLC_series_circuit}
+\end{figure}
+
+図\ref{fig:RLC_series_circuit}の回路に電池をつないだ瞬間に回路を流れる電流を考える.
+
+電池の起電力を$V$とし, ある時刻にコンデンサに蓄えられている電荷を$q(t)$, 抵抗値, インでクタンス, コンデンサの静電容量をそれぞれ$R$, $L$, $C$とすると, 回路に流れる電流$I(t)$は次式で表される.
+\begin{equation}
+  V - L \frac{dI(t)}{dt} = RI(t) + \frac{q(t)}{C}
+\end{equation}
+両辺を時間で微分し, 式\ref{eq:current_charge}を用いて, $2\gamma=R/L$, $\omega_0^2 = 1/(LC)$とおくと, 次式が得られる.
+\begin{equation}
+  \frac{d^2I(t)}{dt^2} + 2 \gamma\frac{dI(t)}{dt} + \omega_0^2 I(t) = 0
+\end{equation}
+
+この式は$I(t)$を$x(t)$と置き換えると, 減衰振動を表す微分方程式と同じ形になり, 解は$\gamma$と$\omega_0$の大小関係によって次の3通りに分類される.
+
+\vskip\baselineskip
+(i) $\gamma < \omega_0$（減衰振動）
+\begin{equation}
+  I(t) = e^{-\gamma t} (a \sin{\omega_1 t} + b \cos{\omega_1 t})
+\end{equation}
+
+(ii) $\gamma > \omega_0$（過減衰）
+\begin{equation}
+  I(t) = e^{-\gamma t} (ae^{\omega_1 t} + be^{-\omega_1 t})
+\end{equation}
+
+(iii) $\gamma = \omega_0$（臨界減衰）
+\begin{equation}
+  I(t) = e^{-\gamma t} (a t + b)
+\end{equation}
+
+ここで, $a$, $b$はいずれの場合も初期条件によって決まる定数, 角周波数$\omega_1$は過減衰の場合$\omega_1 = \sqrt{\gamma^2 - \omega_0^2}$, 減衰振動の場合$\omega_1 = \sqrt{\omega_0^2 - \gamma^2}$である.
+実際に図\ref{fig:RLC_series_circuit}の回路を組み立て, 時間と電流の関係を観測すると, 減衰振動, 過減衰, 臨界減衰のいずれの現象も確認でき, 角周波数$\omega_1$や抵抗係数$\gamma$を求めることができる.
+
+
+
+\section{実験方法}
+
+直流回路において臨界減衰を観測することは困難であるため, 本実験では減衰振動とか減衰について実験を行った.
+回路は$R_0$の抵抗を用いた際に臨界減衰が起こるようなインダクタンス$L$と静電容量$C$を選び, 抵抗値$R$を変えることで減衰振動や過減衰が起こるようにした.
+回路の電源として発振器を接続し, 電流の時間変化を直接観測するのではなく, 抵抗感電圧$V_R(t)$をオシロスコープで観測した.
+
+はじめに, コイルのインでクタンス$L$をLCRメータで, コンデンサの静電容量$C$と抵抗値$R$をマルチメータで測定した.
+次に, 次式を用いて, 抵抗値の平均$R_0$と$L$から, 臨界減衰（$\gamma = \omega_0$）が起こるコンデンサの静電容量$C_0$を計算した.
+$2\gamma = R/L$, $\omega_0^2 = 1/(LC)$, $\gamma = \omega_0$より,
+\begin{eqnarray*}
+  \frac{R}{2L} &=& \sqrt{\frac{1}{LC_0}} \\
+  \frac{R^2}{4L^2} &=& \frac{1}{LC_0} \\
+  C_0 &=& \frac{4L}{R^2}
+\end{eqnarray*}
+測定した宣伝容量$C$が$C_0$に最も近い値になるようにコンデンサを選んだ.
+
+これらのコイルとコンデンサ, 抵抗器を用い, 与えられた4つの抵抗を順番に繋いで回路を組み立て測定を行った.
+
+
+
+\section{実験結果}
+
+
+
+
+
+\section{考察}
+
+
+
+
+
+\section{まとめ}
+
+
+
+\begin{thebibliography}{99}
+
+
+\end{thebibliography}
+
+\end{document}
