@@ -219,7 +219,7 @@ $R_1$で回路を組み立て測定した結果, 減衰振動が観測された.
     山番号 & 時間 & 電圧 & 電圧の絶対値 & 電圧比の対数 \\
     $i$ & $t_i/${\textmu}s & $V_i/\mathrm{V}$ & $|V_i|/\mathrm{V}$ & $\ln{|V_i|/V_1}$ \\
     \hline
-    1 & 0 & 0.472 & 0.472 &  0.000 \\
+    1 & 0 & 0.472 & 0.472 &  0.00000 \\
       & 52 & -0.328 & 0.328 & -0.15807 \\
     2 & 104 & 0.232 & 0.232 & -0.30845 \\
       & 158 & -0.168 & 0.168 & -0.44863 \\
@@ -230,6 +230,8 @@ $R_1$で回路を組み立て測定した結果, 減衰振動が観測された.
     \hline
   \end{tabular}
 \end{table}
+
+\newpage
 
 次に, 表\ref{tb:R1-results}のデータを用いて, 減衰振動の周期の平均値$\overline{T}$と抵抗係数と回路定数から計算した周期$T_0$を表\ref{tb:R1-period}に示す.
 
@@ -245,6 +247,18 @@ $R_1$で回路を組み立て測定した結果, 減衰振動が観測された.
     \hline
   \end{tabular}
 \end{table}
+
+次に, 表\ref{tb:R1-results}のデータを用いて, 横軸に時間$t_i$, 縦軸に電圧比の対数$\ln{V_i/V_1}$をプロットしたグラフを図\ref{fig:R1-graph}に示す.
+近直線の傾きの大きさは$-0.003020\mathrm{V}/${\textmu}sであった.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{graph/R1.png}
+  \caption{$R_1$での時間と電圧比の対数の関係}
+  \label{fig:R1-graph}
+\end{figure}
+
+\newpage
 
 
 
@@ -271,7 +285,7 @@ $R_2$で回路を組み立て測定した結果, 減衰振動が観測された.
     山番号 & 時間 & 電圧 & 電圧の絶対値 & 電圧比の対数 \\
     $i$ & $t_i/${\textmu}s & $V_i/\mathrm{V}$ & $|V_i|/\mathrm{V}$ & $\ln{|V_i|/V_1}$ \\
     \hline
-    1 & 0 & 1.46 & 1.46 &  0.000 \\
+    1 & 0 & 1.46 & 1.46 &  0.00000 \\
       & 53 & -0.74 & 0.74 & -0.29512 \\
     2 & 106 & 0.38 & 0.38 & -0.58457 \\
       & 159 & -0.20 & 0.20 & -0.86332 \\
@@ -279,6 +293,8 @@ $R_2$で回路を組み立て測定した結果, 減衰振動が観測された.
     \hline
   \end{tabular}
 \end{table}
+
+\newpage
 
 次に, 表\ref{tb:R2-results}のデータを用いて, 減衰振動の周期の平均値$\overline{T}$と抵抗係数と回路定数から計算した周期$T_0$を表\ref{tb:R2-period}に示す.
 
@@ -295,6 +311,124 @@ $R_2$で回路を組み立て測定した結果, 減衰振動が観測された.
   \end{tabular}
 \end{table}
 
+次に, 表\ref{tb:R2-results}のデータを用いて, 横軸に時間$t_i$, 縦軸に電圧比の対数$\ln{V_i/V_1}$をプロットしたグラフを図\ref{fig:R2-graph}に示す.
+近直線の傾きの大きさは$-0.005466\mathrm{V}/${\textmu}sであった.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{graph/R2.png}
+  \caption{$R_2$での時間と電圧比の対数の関係}
+  \label{fig:R2-graph}
+\end{figure}
+
+\newpage
+
+
+
+\subsection{過減衰}
+
+
+
+\subsubsection{$R_3$の測定結果}
+
+$R_3$で回路を組み立て測定した結果, 過減衰が観測された.
+オシロスコープで観測した波形を図\ref{fig:R3-oscilloscope}に示す.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{picture/picture_waveform1.png}
+  \caption{$R_3$で観測したオシロスコープの波形}
+  \label{fig:R3-oscilloscope}
+\end{figure}
+
+この波の各電圧$V_n$と1番目の山からの時間$t_n$を測定し, 電圧比の対数$\ln{V_i/V_1}$を求めた結果を表\ref{tb:R3-results}に示す.
+
+\begin{table}[H]
+  \centering
+  \caption{$R_3$での過減衰の測定結果}
+  \label{tb:R3-results}
+  \begin{tabular}{ccc}
+    \hline
+    時間 & 電圧 & 電圧比の対数 \\
+    $t_i/${\textmu}s & $V_i/\mathrm{V}$ & $\ln{|V_i|/V_1}$ \\
+    \hline
+    0 & 5.52 & 0.00000 \\
+    25 & 3.44 & -0.20538 \\
+    50 & 1.92 & -0.45864 \\
+    75 & 1.12 & -0.69272 \\
+    100 & 0.64 & -0.93576 \\
+    125 & 0.40 & -1.13988 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\newpage
+
+次に, 表\ref{tb:R3-results}のデータを用いて, 横軸に時間$t_i$, 縦軸に電圧比の対数$\ln{V_i/V_1}$をプロットしたグラフを図\ref{fig:R3-graph}に示す.
+近直線の傾きの大きさは$-0.009285\mathrm{V}/${\textmu}sであった.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{graph/R3.png}
+  \caption{$R_3$での時間と電圧比の対数の関係}
+  \label{fig:R3-graph}
+\end{figure}
+
+\newpage
+
+
+
+\subsubsection{$R_4$の測定結果}
+
+$R_4$で回路を組み立て測定した結果, 過減衰が観測された.
+オシロスコープで観測した波形を図\ref{fig:R4-oscilloscope}に示す.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{picture/picture_waveform4.png}
+  \caption{$R_4$で観測したオシロスコープの波形}
+  \label{fig:R4-oscilloscope}
+\end{figure}
+
+この波の各電圧$V_n$と1番目の山からの時間$t_n$を測定し, 電圧比の対数$\ln{V_i/V_1}$を求めた結果を表\ref{tb:R4-results}に示す.
+
+\begin{table}[H]
+  \centering
+  \caption{$R_4$での過減衰の測定結果}
+  \label{tb:R4-results}
+  \begin{tabular}{ccc}
+    \hline
+    時間 & 電圧 & 電圧比の対数 \\
+    $t_i/${\textmu}s & $V_i/\mathrm{V}$ & $\ln{|V_i|/V_1}$ \\
+    \hline
+    0 & 6.56 & 0.00000 \\
+    25 & 4.72 & -0.14296 \\
+    50 & 3.52 & -0.27036 \\
+    75 & 2.56 & -0.40866 \\
+    100 & 1.92 & -0.53360 \\
+    125 & 1.44 & -0.65854 \\
+    150 & 1.04 & -0.79987 \\
+    175 & 0.80 & -0.91381 \\
+    200 & 0.56 & -1.06872 \\
+    225 & 0.40 & -1.21484 \\
+    250 & 0.32 & -1.31175 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\newpage
+
+次に, 表\ref{tb:R4-results}のデータを用いて, 横軸に時間$t_i$, 縦軸に電圧比の対数$\ln{V_i/V_1}$をプロットしたグラフを図\ref{fig:R4-graph}に示す.
+近直線の傾きの大きさは$-0.005279\mathrm{V}/${\textmu}sであった.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{graph/R4.png}
+  \caption{$R_4$での時間と電圧比の対数の関係}
+  \label{fig:R4-graph}
+\end{figure}
+
+\newpage
 
 
 
