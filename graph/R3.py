@@ -22,14 +22,14 @@ fig = plt.figure(dpi=200)
 
 x1 = 0
 x2 = 150
-y1 = -1.5
+y1 = -3.5
 y2 = 0
 
 plt.xlim(x1, x2)
 plt.ylim(y1, y2)
 
 x = np.array([0,25,50,75,100,125])
-y = np.array([0,-0.205380635,-0.458637849,-0.692721055,-0.935759104,-1.139879086])
+y = np.array([0,-0.472906389,-1.056052674,-1.595049175,-2.154664963,-2.624668592])
 
 plt.plot(x, y, markeredgecolor='black', marker='o', markersize=5, color='black')
 
@@ -41,10 +41,10 @@ x_fit = np.array([xmin, xmax])
 y_fit = slope * x_fit + intercept
 plt.plot(x_fit, y_fit, marker='', color='black')
 print(f'最小二乗法による直線 (LSM Line)\ny = {slope:.6f}x + {intercept:.6f}')
-plt.text(75, -1.4, f'y = {slope:.6f}x + {intercept:.6f}', fontsize=12)
+plt.text(75, -3.2, f'y = {slope:.6f}x + {intercept:.6f}', fontsize=12)
 
 plt.xlabel(r"時間$t_i\ \mathrm{\mu s}$")
-plt.ylabel(r"電圧比の対数$\ \log{V_i/V_1}$")
+plt.ylabel(r"電圧比の対数$\ \ln{V_i/V_1}$")
 
 plt.tight_layout()
 
