@@ -5,7 +5,7 @@
 \usepackage{url}
 \usepackage{caption}
 \usepackage{amsmath}
-% \captionsetup[table]{justification=centering}
+\captionsetup[table]{justification=centering}
 
 \title{電気回路}
 \author{2511198 肥田幸久}
@@ -46,12 +46,12 @@ V_R(t) = RI(t)
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\linewidth]{picture_principle.png}
+  \includegraphics[width=0.6\linewidth]{picture/picture_principle.png}
   \caption{RLC直列回路の模式図}
-  \label{fig:RLC_series_circuit}
+  \label{fig:RLC-series-circuit}
 \end{figure}
 
-図\ref{fig:RLC_series_circuit}の回路に電池をつないだ瞬間に回路を流れる電流を考える.
+図\ref{fig:RLC-series-circuit}の回路に電池をつないだ瞬間に回路を流れる電流を考える.
 
 電池の起電力を$V$とし, ある時刻にコンデンサに蓄えられている電荷を$q(t)$, 抵抗値, インでクタンス, コンデンサの静電容量をそれぞれ$R$, $L$, $C$とすると, 回路に流れる電流$I(t)$は次式で表される.
 \begin{equation}
@@ -81,32 +81,219 @@ V_R(t) = RI(t)
 \end{equation}
 
 ここで, $a$, $b$はいずれの場合も初期条件によって決まる定数, 角周波数$\omega_1$は過減衰の場合$\omega_1 = \sqrt{\gamma^2 - \omega_0^2}$, 減衰振動の場合$\omega_1 = \sqrt{\omega_0^2 - \gamma^2}$である.
-実際に図\ref{fig:RLC_series_circuit}の回路を組み立て, 時間と電流の関係を観測すると, 減衰振動, 過減衰, 臨界減衰のいずれの現象も確認でき, 角周波数$\omega_1$や抵抗係数$\gamma$を求めることができる.
+実際に図\ref{fig:RLC-series-circuit}の回路を組み立て, 時間と電流の関係を観測すると, 減衰振動, 過減衰, 臨界減衰のいずれの現象も確認でき, 角周波数$\omega_1$や抵抗係数$\gamma$を求めることができる.
 
 
 
 \section{実験方法}
 
-直流回路において臨界減衰を観測することは困難であるため, 本実験では減衰振動とか減衰について実験を行った.
+直流回路において臨界減衰を観測することは困難であるため, 本実験では図\ref{fig:experimental-method}の回路を用いて減衰振動と過減衰について実験を行った.
+
 回路は$R_0$の抵抗を用いた際に臨界減衰が起こるようなインダクタンス$L$と静電容量$C$を選び, 抵抗値$R$を変えることで減衰振動や過減衰が起こるようにした.
 回路の電源として発振器を接続し, 電流の時間変化を直接観測するのではなく, 抵抗感電圧$V_R(t)$をオシロスコープで観測した.
+
+\vskip\baselineskip
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{picture/picture_method.png}
+  \caption{減衰振動, 過減衰の実験回路}
+  \label{fig:experimental-method}
+\end{figure}
 
 はじめに, コイルのインでクタンス$L$をLCRメータで, コンデンサの静電容量$C$と抵抗値$R$をマルチメータで測定した.
 次に, 次式を用いて, 抵抗値の平均$R_0$と$L$から, 臨界減衰（$\gamma = \omega_0$）が起こるコンデンサの静電容量$C_0$を計算した.
 $2\gamma = R/L$, $\omega_0^2 = 1/(LC)$, $\gamma = \omega_0$より,
-\begin{eqnarray*}
-  \frac{R}{2L} &=& \sqrt{\frac{1}{LC_0}} \\
-  \frac{R^2}{4L^2} &=& \frac{1}{LC_0} \\
-  C_0 &=& \frac{4L}{R^2}
-\end{eqnarray*}
+\begin{eqnarray}
+  \frac{R}{2L} &=& \sqrt{\frac{1}{LC_0}} \nonumber \\
+  \frac{R^2}{4L^2} &=& \frac{1}{LC_0} \nonumber \\
+  C_0 &=& \frac{4L}{R^2} \label{eq:critical-capacitance}
+\end{eqnarray}
 測定した宣伝容量$C$が$C_0$に最も近い値になるようにコンデンサを選んだ.
 
 これらのコイルとコンデンサ, 抵抗器を用い, 与えられた4つの抵抗を順番に繋いで回路を組み立て測定を行った.
+\newpage
 
 
 
 \section{実験結果}
 
+
+
+\subsection{回路定数}
+
+コイルのインダクタンス$L$と抵抗値$R$の測定結果を表\ref{tb:measure-result}に, 与えられた4つの抵抗の抵抗値の測定結果を表\ref{tb:resistor-values}に示す.
+
+\begin{table}[H]
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \caption{コイルのインダクタンスと\protect\linebreak 抵抗値の測定結果}
+    \label{tb:measure-result}
+    \begin{tabular}{cccc}
+      \hline
+      インダクタンス & 抵抗値 \\
+      $L/\mathrm{mH}$ & $R/\Omega$ \\
+      \hline
+      27.44 & 160.9 \\
+      \hline
+    \end{tabular}
+  \end{minipage}
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \caption{与えられた抵抗器の\protect\linebreak 抵抗値の測定結果}
+    \label{tb:resistor-values}
+    \begin{tabular}{cc}
+      \hline
+      抵抗器番号 & 抵抗値 \\
+      & $R/\Omega$ \\
+      \hline
+      $R_1$ & 130.3 \\
+      $R_2$ & 460.8 \\
+      $R_3$ & 4697 \\
+      $R_4$ & 8045 \\
+      \hline
+      平均値 & 3333 \\
+      \hline
+    \end{tabular}
+  \end{minipage}
+\end{table}
+
+
+これらの抵抗値の平均値$R_0 = 3333 \Omega$とインダクタンス$L = 27.44 \mathrm{mH}$を用いて, 臨界減衰が起こるコンデンサの静電容量$C_0$を式\ref{eq:critical-capacitance}より計算した.
+\begin{equation*}
+  C_0 = \frac{4L}{R_0^2} = \frac{4 \times 27.44 \times 10^{-3}}{(3333)^2} \approx 9.88 \times 10^{-9} \mathrm{F} = 9.88 \mathrm{nF}
+\end{equation*}
+
+次に, 測定したコンデンサの静電容量$C$を表\ref{tb:capacitor-values}に示す.
+
+\begin{table}[H]
+  \centering
+  \caption{測定したコンデンサの静電容量}
+  \label{tb:capacitor-values}
+  \begin{tabular}{cc}
+    \hline
+    コンデンサ番号 & 静電容量 \\
+    & $C/\mathrm{nF}$ \\
+    \hline
+    $C_1$ & 10.24 \\
+    $C_2$ & 2.170 \\
+    $C_3$ & 22.22 \\
+    $C_4$ & 2.670 \\
+    $C_5$ & 3.288 \\
+    $C_6$ & 0.404 \\
+    $C_7$ & 4.770 \\
+    $C_8$ & 6.760 \\
+    $C_9$ & 48.13 \\
+    $C_{10}$ & 1.425 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+これらの中から, 臨界減衰が起こる静電容量$C_0 = 9.88 \mathrm{nF}$に最も近い値である$C_1 = 10.24 \mathrm{nF}$のコンデンサを選んだ.
+
+
+
+\subsection{減衰振動}
+
+
+
+\subsubsection{$R_1$の測定結果}
+
+$R_1$で回路を組み立て測定した結果, 減衰振動が観測された.
+オシロスコープで観測した波形を図\ref{fig:R1-oscilloscope}に示す.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{picture/picture_waveform3.png}
+  \caption{$R_1$で観測したオシロスコープの波形}
+  \label{fig:R1-oscilloscope}
+\end{figure}
+
+この波の各山と谷のピーク電圧$V_n$と1番目の山からの時間$t_n$を測定し, 周期$T_i$や電圧比の対数$\ln{V_i/V_1}$を求めた結果を表\ref{tb:R1-results}に示す.
+
+\begin{table}[H]
+  \centering
+  \caption{$R_1$での減衰振動の測定結果}
+  \label{tb:R1-results}
+  \begin{tabular}{ccccc}
+    \hline
+    山番号 & 時間 & 電圧 & 電圧の絶対値 & 電圧比の対数 \\
+    $i$ & $t_i/${\textmu}s & $V_i/\mathrm{V}$ & $|V_i|/\mathrm{V}$ & $\ln{|V_i|/V_1}$ \\
+    \hline
+    1 & 0 & 0.472 & 0.472 &  0.000 \\
+      & 52 & -0.328 & 0.328 & -0.15807 \\
+    2 & 104 & 0.232 & 0.232 & -0.30845 \\
+      & 158 & -0.168 & 0.168 & -0.44863 \\
+    3 & 212 & 0.112 & 0.112 & -0.62472 \\
+      & 266 & -0.08 & 0.080 & -0.77085 \\
+    4 & 320 & 0.056 & 0.056 & -0.92575 \\
+      & 374 & -0.032 & 0.032 & -1.16879 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+次に, 表\ref{tb:R1-results}のデータを用いて, 減衰振動の周期の平均値$\overline{T}$と抵抗係数と回路定数から計算した周期$T_0$を表\ref{tb:R1-period}に示す.
+
+\begin{table}[H]
+  \centering
+  \caption{$R_1$での減衰振動の周期}
+  \label{tb:R1-period}
+  \begin{tabular}{cc}
+    \hline
+    測定周期 $\overline{T}/${\textmu}s & 計算周期 $T_0/${\textmu}s \\
+    \hline
+    106.7 & 105.7 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+
+\subsubsection{$R_2$の測定結果}
+
+$R_2$で回路を組み立て測定した結果, 減衰振動が観測された.
+オシロスコープで観測した波形を図\ref{fig:R2-oscilloscope}に示す.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{picture/picture_waveform2.png}
+  \caption{$R_2$で観測したオシロスコープの波形}
+  \label{fig:R2-oscilloscope}
+\end{figure}
+
+この波の各山と谷のピーク電圧$V_n$と1番目の山からの時間$t_n$を測定し, 周期$T_i$や電圧比の対数$\ln{V_i/V_1}$を求めた結果を表\ref{tb:R2-results}に示す.
+
+\begin{table}[H]
+  \centering
+  \caption{$R_2$での減衰振動の測定結果}
+  \label{tb:R2-results}
+  \begin{tabular}{ccccc}
+    \hline
+    山番号 & 時間 & 電圧 & 電圧の絶対値 & 電圧比の対数 \\
+    $i$ & $t_i/${\textmu}s & $V_i/\mathrm{V}$ & $|V_i|/\mathrm{V}$ & $\ln{|V_i|/V_1}$ \\
+    \hline
+    1 & 0 & 1.46 & 1.46 &  0.000 \\
+      & 53 & -0.74 & 0.74 & -0.29512 \\
+    2 & 106 & 0.38 & 0.38 & -0.58457 \\
+      & 159 & -0.20 & 0.20 & -0.86332 \\
+    3 & 212 & 0.10 & 0.10 & -1.16435 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+次に, 表\ref{tb:R2-results}のデータを用いて, 減衰振動の周期の平均値$\overline{T}$と抵抗係数と回路定数から計算した周期$T_0$を表\ref{tb:R2-period}に示す.
+
+\begin{table}[H]
+  \centering
+  \caption{$R_2$での減衰振動の周期}
+  \label{tb:R2-period}
+  \begin{tabular}{cc}
+    \hline
+    測定周期 $\overline{T}/${\textmu}s & 計算周期 $T_0/${\textmu}s \\
+    \hline
+    106.0 & 107.3 \\
+    \hline
+  \end{tabular}
+\end{table}
 
 
 
@@ -121,9 +308,9 @@ $2\gamma = R/L$, $\omega_0^2 = 1/(LC)$, $\gamma = \omega_0$より,
 
 
 
-\begin{thebibliography}{99}
+% \begin{thebibliography}{99}
 
 
-\end{thebibliography}
+% \end{thebibliography}
 
 \end{document}
